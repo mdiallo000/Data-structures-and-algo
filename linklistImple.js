@@ -67,23 +67,26 @@ class LinkedList {
         next: null
       }
     const leader = this.Traverse(index-1)
-      
-      Traverse(index){
-        // we will use this function to travers the link list and find a paticular index
-          let counter = 0;
-        let currentNode = this.head;
+    const HoldPrevious = leader.next
+    leader.next = NewNode;
+     newNode.next= HoldPrevious;
+     this.length++;
+     return this; 
+    }
+    Traverse(index){
+      // we will use this function to travers the link list and find a paticular index
+        let counter = 0;
+      let currentNode = this.head;
 
-        while( counter !== index){
-            currentNode = this.head.next;  
-            counter ++;
-
-        }
-
+      while( counter !== index){
+          currentNode = currentNode.next;  
+          counter ++;
 
       }
+      return currentNode;
+
 
     }
-
 
   }
 
