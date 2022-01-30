@@ -34,16 +34,35 @@ class LinkedList {
   }
 
   prepend(value){
-    
+    let firstNode= {
+        value: value,
+        next:null
 
+      }
+      firstNode.next = this.head;
+      this.head = firstNode;
+      this.length++;
+      return this;
+  }
+
+  printlist(){
+    let arr =[]
+    let currentNode = this.head;
+
+    while(currentNode !== null){
+
+      arr.push(currentNode.value)
+      currentNode = currentNode.next
+
+    }
 
 
   }
-
 
 }
 
 let mylist = new LinkedList(10);
 mylist.append(15);
 mylist.append(85);
-console.log(mylist);
+mylist.prepend(100)
+console.log(mylist); 
