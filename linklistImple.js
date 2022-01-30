@@ -22,7 +22,7 @@ class LinkedList {
     this.length = 1;
   }
 
-  append(value) {
+  Append(value) {
     let newNode = {
       value: value,
       next: null,
@@ -33,36 +33,65 @@ class LinkedList {
     return this;
   }
 
-  prepend(value){
-    let firstNode= {
-        value: value,
-        next:null
-
-      }
-      firstNode.next = this.head;
-      this.head = firstNode;
-      this.length++;
-      return this;
+  Prepend(value) {
+    let firstNode = {
+      value: value,
+      next: null,
+    };
+    firstNode.next = this.head;
+    this.head = firstNode;
+    this.length++;
+    return this;
   }
 
-  printlist(){
-    let arr =[]
+  Printlist() {
+    let arr = [];
     let currentNode = this.head;
 
-    while(currentNode !== null){
+    while (currentNode !== null) {
+      arr.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return arr;
+  }
 
-      arr.push(currentNode.value)
-      currentNode = currentNode.next
+  Insert(idx, value) {
+
+      if (idx >= this.length){
+        return this.Append(value);
+
+      }
+
+      const NewNode ={
+        value: value,
+        next: null
+      }
+    const leader = this.Traverse(index-1)
+      
+      Traverse(index){
+        // we will use this function to travers the link list and find a paticular index
+          let counter = 0;
+        let currentNode = this.head;
+
+        while( counter !== index){
+            currentNode = this.head.next;  
+            counter ++;
+
+        }
+
+
+      }
 
     }
 
 
   }
 
+
 }
 
 let mylist = new LinkedList(10);
-mylist.append(15);
-mylist.append(85);
-mylist.prepend(100)
-console.log(mylist); 
+mylist.Append(15);
+mylist.Append(85);
+mylist.Prepend(100);
+console.log(mylist.Printlist());
