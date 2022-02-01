@@ -14,11 +14,17 @@ class MyArray {
   Pop() {
     return delete this.data[this.length - 1];
   }
+
+  Delete(index) {
+    const location = this.data[index];
+    return delete location;
+  }
 }
 
 const list = new MyArray();
 list.Push(800);
 list.Push("hello");
 list.Push("bye");
-list.Pop();
+// list.Pop();
+
 console.log(list);
