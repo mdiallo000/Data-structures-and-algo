@@ -153,6 +153,16 @@ class SinglyLinkedList {
     }
     return current;
   }
+
+  shift() {
+    //*-*-*
+    if (!this.head) return undefined;
+
+    let newHead = this.head;
+    this.head = newHead.next;
+    this.length--;
+    return newHead;
+  }
 }
 
 let mylist = new SinglyLinkedList();
