@@ -126,31 +126,33 @@ class SinglyLinkedList {
     if (!this.head) {
       this.head = newNode;
       this.tail = newNode;
-    } 
-    else {
+    } else {
       this.tail.next = newNode;
       this.tail = newNode;
     }
     this.length++;
     return this;
   }
-
-  Pop(index){
-    // *--target--*;
-    let target = this.TravelNode(index);
-    let preNode = this.TravelNode(index -1)
-    let postTarget = target.next;
-    preNode.next = postTarget;
-
+  /// we are going to pop off the next last node
+  Pop() {
+    if (this.head == null) return undefined;
+    /// we next create two variables, we call one current and the other tail, we will use current to traverse the node until we find null, while the tail lags right behind it
+    let current = this.head;
+    let finalTail = current;
+    while (current.next !== null) {
+      finalTail = current;
+      // we update final tail so that it willl always lag behind until we reach the target
+      current = current.next;
+    }
+    this.tail = this.tail;
+    this.tail.next = null;
     this.length--;
-    
-
-
-
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    return current;
   }
-
- 
-
 }
 
 let mylist = new SinglyLinkedList();
@@ -159,4 +161,5 @@ mylist.Push(78);
 mylist.Push(788);
 mylist.Push(8);
 mylist.Push(878);
-console.log(mylist)
+
+console.log(mylist);

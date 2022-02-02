@@ -55,3 +55,13 @@ function ReverseStr(str) {
 }
 console.log(ReverseStr(78));
 console.log(ReverseStr("hELLO"));
+// SO TO REVERSE A STRING IS EASY, FIRS CHECK IF ITS A STRING, IF IT IS THEN JUST LOOP FROM THE END OF THE STRING AND A RETURN AN ARRAY OF THE LOOP STRING
+
+function MergeSortedARR(list1, list2){
+    let mereged =[]
+    for (let i=0; i <list1.length; i++){
+        mereged.push(list[i])
+    }
+    
+
+}
