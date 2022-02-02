@@ -163,6 +163,20 @@ class SinglyLinkedList {
     this.length--;
     return newHead;
   }
+
+  Unshift(value) {
+    const newNode = new Node(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
 }
 
 let mylist = new SinglyLinkedList();
@@ -171,5 +185,5 @@ mylist.Push(78);
 mylist.Push(788);
 mylist.Push(8);
 mylist.Push(878);
-
+mylist.Unshift(5);
 console.log(mylist);
