@@ -187,14 +187,52 @@ class SinglyLinkedList {
       currentNode = currentNode.next;
       counter++;
     }
+    return currentNode;
+  }
+
+  Set(index, value) {
+    let target = this.Get(index);
+
+    if (target) {
+      target.val = value;
+      return true;
+    }
+    return false;
+  }
+  Insert(index, value) {
+    const newNode = new Node(value);
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+    if (index === this.length) {
+      this.Pop(value);
+      return true;
+    }
+    if (index === 0) {
+      this.Unshift(value);
+      return true;
+    } else {
+      const BackNode = this.Get(index - 1);
+      const temp = BackNode.next;
+      BackNode.next = newNode;
+      newNode.next = temp;
+      this.length++;
+      return true;
+    }
+  }
+  Size() {
+    return this.length;
   }
 }
 
 let mylist = new SinglyLinkedList();
 mylist.Push(89);
 mylist.Push(78);
-mylist.Push(788);
 mylist.Push(8);
-mylist.Push(878);
+// mylist.Push(788);
+// mylist.Push(8);
+// mylist.Push(878);
 mylist.Unshift(5);
+console.log(mylist.Insert(1, 100));
+console.log(mylist.Size());
 console.log(mylist);
