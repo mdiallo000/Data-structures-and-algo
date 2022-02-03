@@ -223,16 +223,64 @@ class SinglyLinkedList {
   Size() {
     return this.length;
   }
+  Remove(index) {
+    if (index < 0 || index > this.length) {
+      return undefined;
+    }
+    if (index === this.legnth - 1) {
+      return this.Pop();
+    }
+
+    let BackNode = this.Get(index - 1);
+    let target = this.Get(index);
+    let replacement = target.next;
+    BackNode.next = replacement;
+    this.length--;
+    return target;
+  }
+  /// Reverse a linked List
+  Reverse() {
+    // first we declare a new varibale that will hold the old head, now we can switch the head to be the tail and vice versa
+
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+    // now we declare two variables that will be used to traverser trough the liked
+
+    let next;
+    let prev = null;
+
+    for (i = 0; i > this.length; i++) {
+      //store whatever node.next was prevsioulsy reference into next  NODE<--- NODE.NEXT
+
+      next = node.next;
+      node.next = prev;
+      /// then we move up BY MAKING PREVIOUS HOLD THE CURENT NODE AND THE UPDATE THE CURRENT NODE TO HOLD THE VALUE OF NEXT
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
+
+  Print() {
+    let arr = [];
+    let current = this.head;
+    while (current !== null) {
+      arr.push(current.val);
+      current = current.next;
+    }
+    console.log(arr);
+  }
 }
 
 let mylist = new SinglyLinkedList();
 mylist.Push(89);
 mylist.Push(78);
 mylist.Push(8);
-// mylist.Push(788);
-// mylist.Push(8);
-// mylist.Push(878);
-mylist.Unshift(5);
-console.log(mylist.Insert(1, 100));
+console.log(mylist.Remove(1));
 console.log(mylist.Size());
+mylist.Push(56);
+mylist.Push(78);
+mylist.Push(489);
+mylist.Reverse();
 console.log(mylist);
