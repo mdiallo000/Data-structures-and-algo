@@ -250,7 +250,7 @@ class SinglyLinkedList {
     let next;
     let prev = null;
 
-    for (i = 0; i > this.length; i++) {
+    for (let i = 0; i > this.length; i++) {
       //store whatever node.next was prevsioulsy reference into next  NODE<--- NODE.NEXT
 
       next = node.next;
@@ -283,4 +283,5 @@ mylist.Push(56);
 mylist.Push(78);
 mylist.Push(489);
 mylist.Reverse();
+
 console.log(mylist);
