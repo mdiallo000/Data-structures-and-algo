@@ -9,10 +9,20 @@ function CallAgain() {
   if (counter > 0) return "its done";
 
   counter++;
- return CallAgain();
+  return CallAgain();
 }
 
 console.log(CallAgain());
 
 // =======================
 // =======================
+function RecursiveFactorial(num) {
+  // first check if the number is less than 0 if it is return -1;
+
+  if (num < 0) return -1;
+  // then check if the num is equal to 0, if it is return 1;
+  if (num == 0) return 1;
+  else {
+    return num * RecursiveFactorial(num - 1);
+  }
+}
