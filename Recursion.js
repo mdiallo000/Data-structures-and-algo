@@ -19,10 +19,19 @@ console.log(CallAgain());
 function RecursiveFactorial(num) {
   // first check if the number is less than 0 if it is return -1;
 
-  if (num < 0) return -1;
+  if (num < 0) return null;
   // then check if the num is equal to 0, if it is return 1;
-  if (num == 0) return 1;
-  else {
+  if (num == 1) return 1;
+  // AS NUM GETS CALLED OVER AND OVER AGAIN RECURSIVELLY, at some point it will decrease to 1 and that will met our base case to come out the loop
+  else { 
     return num * RecursiveFactorial(num - 1);
+//  num = 4; this is whats going to happen 
+// 4 times 3 
+// 3 times 2
+// 2 times 1 
+
   }
 }
+
+
+console.log(RecursiveFactorial)
