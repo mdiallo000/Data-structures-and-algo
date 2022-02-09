@@ -74,10 +74,43 @@ class MyLinkedList {
     this.length++;
     return this;
   }
+  Pop() {
+    if (this.length == 0) return undefined;
+    let tailfinder = this.head;
+    let current = this.head;
+    // ** So we create two new variables that will start at the head, this will be our two pointers that will lead us to the target
+    while (current.next) {
+      tailfinder = current;
+      //** the point is to keep tailfinder always behind where we currently are, becuase eventually current will reach the end node, while tailfinder will be righ behind TF=>C, then we can pop of current  8=> 10=> 12=> Null. The loop will end when the next value is nulll.
+      // **         TF   C
+
+      current = current.next;
+    }
+    this.tail = tailfinder;
+    tailfinder.next = null;
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
+    this.length--;
+    return current;
+  }
+
+  GetLastNode() {
+    let current = this.head;
+
+    while (current) {
+      current = current.next;
+    }
+    return current;
+  }
 }
 
 let a = new MyLinkedList();
 a.Push(87);
 a.Push(7);
 a.Push(9);
+a.Pop('IamBefore');
+a.Pop('IamAfter');
+console.log(a.GetLastNode());
 console.log(a);
