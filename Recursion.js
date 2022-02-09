@@ -6,7 +6,7 @@
 let counter = 0;
 
 function CallAgain() {
-  if (counter > 0) return "its done";
+  if (counter > 0) return 'its done';
 
   counter++;
   return CallAgain();
@@ -23,15 +23,11 @@ function RecursiveFactorial(num) {
   // then check if the num is equal to 0, if it is return 1;
   if (num == 1) return 1;
   // AS NUM GETS CALLED OVER AND OVER AGAIN RECURSIVELLY, at some point it will decrease to 1 and that will met our base case to come out the loop
-  else { 
+  else {
     return num * RecursiveFactorial(num - 1);
-//  num = 4; this is whats going to happen 
-// 4 times 3 
-// 3 times 2
-// 2 times 1 
-
+    //  num = 4; this is whats going to happen
+    // 4 times 3
+    // 3 times 2
+    // 2 times 1
   }
 }
-
-
-console.log(RecursiveFactorial)
