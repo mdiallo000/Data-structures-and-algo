@@ -96,7 +96,25 @@ class MyLinkedList {
     return current;
   }
 
-  Unshit() {
+  Unshift(value) {
+    // ** Goal is to insert a newNode at the head of our lINKED liST. 1 MAKE A NEW NODE AND PASS THE VALUE; 2 LOCATE THE CURRENT HEAD IF THERE IS ONE; 3 MAKE THE NEW NODE POINT AT THE HEAD;4 MAKE THE .NEXT OF THE NEW NODE POINT AT THE OLD HEAD
+
+    let newNode = new Node(value);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      // ** 1=>2=>3=>4=>
+      // ** H
+      newNode.next = this.head;
+
+      this.head = newNode;
+      this.length++;
+      return this;
+    }
+  }
+
+  Shift() {
     /**
      * * 6=> 7=>8=>9 So lets say I want to take off the head of the list
      * * Head      Tail. I think the best way to achieve this is by save the .next of the head variable, then make the current head equal that variable
@@ -126,21 +144,5 @@ a.Push(7);
 a.Push(9);
 a.Push('IamBefore');
 a.Push('IamAfter');
-a.Unshit();
+a.Unshift(100);
 console.log(a);
-
-function ReverseString(str) {
-  let newstr = '';
-
-  for (let i = str.length - 1; i >= 0; i--) {
-    newstr += str[i];
-  }
-
-  return newstr;
-}
-
-console.log(ReverseString('Marint i am the gaot '));
-
-let word = 'Micheal Myers was kind of a great guy';
-let newstr = str.split('');
-console.log(newstr);
