@@ -136,6 +136,19 @@ class MyLinkedList {
     }
     return current;
   }
+  GetIndex(index) {
+    // ** WE ARE ESSENTIALLY ATTEMPTING TO LOCATE AN INDEX INSIDE OUR LINKEDLIST, TO DO SO YOU WOULD NEED TO LOOP THROUGH THE WHOLE LIST UNTIL YOU FIND THE TARGET NODE.
+    if (index > this.length || index <= 0) return null;
+    let current = this.head;
+
+    let counter = 0;
+
+    while (counter !== index) {
+      current = current.next;
+      counter++;
+    }
+    return current;
+  }
 }
 
 let a = new MyLinkedList();
