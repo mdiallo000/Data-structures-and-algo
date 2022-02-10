@@ -99,14 +99,15 @@ class MyLinkedList {
   Unshit() {
     /**
      * * 6=> 7=>8=>9 So lets say I want to take off the head of the list
-     * * Head      Tail. I think the best way to achieve this is by save the .next of the head variable, then make the current head equal that variab
+     * * Head      Tail. I think the best way to achieve this is by save the .next of the head variable, then make the current head equal that variable
      */
     if (!this.head) return null;
-
+    let current = this.head;
     let newHead = this.head.next;
 
     this.head = newHead;
     this.length--;
+    return current;
   }
 
   GetLastNode() {
@@ -125,4 +126,21 @@ a.Push(7);
 a.Push(9);
 a.Push('IamBefore');
 a.Push('IamAfter');
+a.Unshit();
 console.log(a);
+
+function ReverseString(str) {
+  let newstr = '';
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    newstr += str[i];
+  }
+
+  return newstr;
+}
+
+console.log(ReverseString('Marint i am the gaot '));
+
+let word = 'Micheal Myers was kind of a great guy';
+let newstr = str.split('');
+console.log(newstr);
