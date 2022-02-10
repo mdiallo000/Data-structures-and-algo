@@ -138,16 +138,45 @@ class MyLinkedList {
   }
   GetIndex(index) {
     // ** WE ARE ESSENTIALLY ATTEMPTING TO LOCATE AN INDEX INSIDE OUR LINKEDLIST, TO DO SO YOU WOULD NEED TO LOOP THROUGH THE WHOLE LIST UNTIL YOU FIND THE TARGET NODE.
-    if (index > this.length || index <= 0) return null;
+    if (index >= this.length || index <= 0) return null;
     let current = this.head;
+    // ** we will use current to hold the current node because its what we are look for
 
     let counter = 0;
-
+    // ** counter will be used to compare against the index we are looking for, as long as counter does not equal the index we will continue to traverse through the node.
     while (counter !== index) {
       current = current.next;
       counter++;
     }
     return current;
+  }
+  Set(index, value) {
+    let targetNode = this.GetIndex(index);
+    if (targetNode) {
+      targetNode.value = value;
+      return targetNode;
+    }
+    return false;
+  }
+  Insert(index, value) {
+    if (index > this.length || index <= 0) {
+      return false;
+    }
+    if (index === this.length) {
+      return this.Push(value);
+    }
+    if (index === 0) {
+      return this.Unshift(value);
+    }
+    // * to insert we need to locate the target node and the node before it since we will be insert in between like this  Backnode=> WhereWeInsert=> TargetNode
+    else {
+      let Backnode = this.GetIndex(index - 1);
+      let newNode = new Node(value);
+      newnode.next = Backnode.next;
+      Backnode.next = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
 
@@ -155,7 +184,5 @@ let a = new MyLinkedList();
 a.Push(87);
 a.Push(7);
 a.Push(9);
-a.Push('IamBefore');
-a.Push('IamAfter');
-a.Unshift(100);
+a.Push(999);
 console.log(a);
