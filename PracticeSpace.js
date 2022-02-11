@@ -159,6 +159,8 @@ class MyLinkedList {
     return false;
   }
   Insert(index, value) {
+    // ** We need to make sure that we are inserting somewhere in the midlle and not at the end or start, in the case we are then we can use the PUSH AND UNSHIFT
+
     if (index > this.length || index <= 0) {
       return false;
     }
@@ -172,11 +174,12 @@ class MyLinkedList {
     else {
       let Backnode = this.GetIndex(index - 1);
       let newNode = new Node(value);
-      newnode.next = Backnode.next;
+      let temp = Backnode.next;
       Backnode.next = newNode;
+      newNode.next = temp;
+      this.length++;
+      return true;
     }
-    this.length++;
-    return this;
   }
 }
 
@@ -185,4 +188,9 @@ a.Push(87);
 a.Push(7);
 a.Push(9);
 a.Push(999);
+a.Push({
+  g: 48,
+});
+a.Push([12]);
+a.Push(829);
 console.log(a);
