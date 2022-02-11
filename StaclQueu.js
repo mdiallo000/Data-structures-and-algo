@@ -9,14 +9,25 @@ class Stack {
     if (this.size == 0) {
       this.first = newnode;
       this.last - newnode;
-    }
-
-    if (this.size >= 1) {
+    } else {
       let save = this.first;
       this.first = newnode;
       newnode.next = save;
-      this.size++;
     }
+    return ++this.size;
+  }
+
+  Pop() {
+    if (this.head === 0) return null;
+    let saveFirst = this.first;
+    if (this.size === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = this.first.next;
+      this.size--;
+    }
+    return saveFirst;
   }
 }
 
@@ -26,3 +37,10 @@ class Node {
     this.next - null;
   }
 }
+
+let mystack = new Stack();
+mystack.Push(45);
+mystack.Push(895);
+mystack.Push(5);
+mystack.Push('i AM NEW');
+console.log(mystack);
