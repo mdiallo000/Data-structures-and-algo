@@ -14,6 +14,21 @@ class Queue {
       this.last.next = newnode;
       this.last = newnode;
     }
+    return this.size++;
+  }
+
+  Dequeue() {
+    // **  h=> 4=>0=>
+    if (!this.first) return null;
+    let tempvar = this.first;
+    // ** Make an edge case in case there are itema on the list
+    if (this.first === this.last) {
+      this.last = null;
+    }
+
+    this.first = this.first.next;
+    this.size--;
+    return tempvar;
   }
 }
 
@@ -23,3 +38,10 @@ class Node {
     this.next - null;
   }
 }
+
+let myqueue = new Queue();
+
+myqueue.Enqueue('first');
+myqueue.Enqueue('Second');
+myqueue.Enqueue('Third');
+console.log(myqueue);
