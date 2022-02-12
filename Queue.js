@@ -1,3 +1,7 @@
+// ** Big O of Stacks
+// ** Adding and Removing are both 0(1) since its last IN FIRST out, so we will essentially not traverse of create gaps in between the stack.
+// ** Searching and Acessing are both 0(n) meaning the speed will be dtermined by the number of items in our Stack. Its recommended to use a regular array if assess is a priority.
+
 class Queue {
   constructor() {
     this.first = null;

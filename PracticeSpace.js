@@ -194,3 +194,9 @@ a.Push({
 a.Push([12]);
 a.Push(829);
 console.log(a);
+
+for(let i = 0; i <=100; i++){
+
+
+  
+}
