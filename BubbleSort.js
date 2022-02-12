@@ -6,19 +6,24 @@
 // ! Another way of looking at it
 // ? Waiter2 is holding something but he wants to exchange his plate with 1, the plates are heavy so they cannot exchange betwenn one another. So waiter 2 gives his plate to the chef
 // **  chef = wiater2[chicken];
-// ? Now with his empty hands waiter two can now take whatever waiter two is holdding
+// ? Now with his empty hands waiter two can now take whatever waiter one is holdding
 // ** waiter2 = waiter1[lamb];
 // ? waiter 1 now takes what waiter 2 gave to the chef
 // ** waiter1 = Chef
 // ? The swap is finished they are both holding whatever the other was initinally
 let list = [23, 2, 45, 64, 231, 31];
 function BubbleSort(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i; j < arr.length; j++)
+  for (let i = arr.length; i >= 0; i--) {
+    console.log(arr);
+
+    for (let j = i; j < i - 1; j++)
       if (arr[j] > arr[j + 1]) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
         arr[j + 1] = temp;
       }
   }
+  return arr;
 }
+
+console.log(BubbleSort(list));
