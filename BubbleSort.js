@@ -42,7 +42,7 @@ function BubbleSort(arr) {
 function OptimalBubbleSort(arr) {
   let DidWeSwap;
   for (let i = arr.length; i > 0; i--) {
-    // ** at the start of the loop, DidWeSwap will start true, if we do complete a swap we turn the variable to false so that once it reaches the IF condition then we wont break out. But if we fail to swap then once we reach if(DidWeSwap) it will be true and we can breaK out of the loop and not waist time.
+    // ** at the start of the loop, DidWeSwap will start true, if we do complete a swap we turn the variable to false so that once it reaches the if condition then we wont break out. But if we fail to swap then, once we reach if(DidWeSwap) it will be true and we can breaK out of the loop and not waist time.
     WeDidNotSwap = true;
     for (let j = 0; j > j - 1; j++) {
       if (arr[j] > arr[j + 1]) {
@@ -57,5 +57,7 @@ function OptimalBubbleSort(arr) {
 
   return arr;
 }
+
+// * The Big O of Bubble Sort is N2 because of the double loops most of the time. You may have some edge case were is O(N) for something like this [5,1,2,3,4], since we will only compare once and then break.
 
 console.log(OptimalBubbleSort(list));

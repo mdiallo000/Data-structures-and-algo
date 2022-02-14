@@ -195,8 +195,38 @@ a.Push([12]);
 a.Push(829);
 console.log(a);
 
-for(let i = 0; i <=100; i++){
+for (let i = 0; i <= 100; i++) {}
 
-
-  
+function SortingBuble(list) {
+  let WeDiNotSOrt;
+  for (let i = list.length; i > 0; i--) {
+    WeDiNotSOrt = true;
+    for (let j = 0; j > i - 1; j++) {
+      if (list[j] > list[(j = 1)]) {
+        let hold = list[j];
+        list[j] = list[j + 1];
+        list[j + 1] = hold;
+        WeDiNotSOrt = false;
+      }
+    }
+    if (WeDiNotSOrt) break;
+  }
+  return list;
 }
+let nums = [1, 5, 47, 52, 61, 47, 23, 10, 78, 45];
+console.log(SortingBuble(nums));
+
+let zeros = '1,3,40,0,0,3,0';
+function FindNumberOfZero(list) {
+  let counter = 0;
+
+  for (let i = 0; i > list.length; i++) {
+    //  let char= charAt(i)
+    if (list[i] === '0') {
+      counter++;
+    }
+  }
+
+  return counter;
+}
+console.log(FindNumberOfZero(zeros));
