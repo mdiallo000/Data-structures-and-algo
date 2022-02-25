@@ -5,8 +5,21 @@ const ValidPalindrome = (s) => {
   if (s.length === 0) {
     return null;
   }
-  newstr = s.toLowerCase().split('');
-  //  racecar or Bob
+  // ! First half of the goal is to create a new string that only includes alpha numerical chars and lowercase as well
+
+  // * we need to declare a variable that will hold the allowed values in a string, meaning Alphanumeric characters
+  let allowedLetters = '1234567890qwertyuiopasdfghjklzxcvbnm';
+  let newstr = '';
+  for (let letter of s.toLowerCase()) {
+    if (!allowedLetters.includes(letter)) {
+      continue;
+    } else {
+      newstr += letter;
+    }
+  }
+
+  // ! Once we have our new string that has only lowercase values then we can use two pointers to compare wethere there the same, if there not the end the loop, and as long as they are we update our pointers.
+
   let start = 0;
   let end = newstr.length - 1;
   while (start < end) {
@@ -22,7 +35,6 @@ const ValidPalindrome = (s) => {
 
 let word = 'THEBESVER guy in th world';
 let wordvar = word.toLowerCase();
-console.log(ValidPalindrome('racecar'));
-console.log(wordvar.split(''));
+console.log(ValidPalindrome('racecar '));
 
 // ? This is how i solved it basically a palindrome is a word written same front way and backway.

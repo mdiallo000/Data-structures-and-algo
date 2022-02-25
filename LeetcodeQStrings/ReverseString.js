@@ -19,7 +19,7 @@ console.log(reverseString(['h', 'e', 'l', 'l', 'o']));
 
 const TwoPointerReverseSTR = (str) => {
   // * str = 'HELLO'
-  // *        p1   p2
+  // *       p1[0]   p2[.lenght-1]
   // * 1.Declare two pointers, one at the start one the string the other at the end
   // * 2. Swap the the element at each pointer
   // * 3. Increase pointer one, decrease the last pointer this will make them eventually meet and end the while loop
@@ -34,4 +34,6 @@ const TwoPointerReverseSTR = (str) => {
   }
   return str;
 };
-console.log(TwoPointerReverseSTR(''));
+
+//* This method is O(N) TIME complexity and O(1) space because we are not mutating a new list or array since were performing the reversal in-place.
+console.log(TwoPointerReverseSTR(['h', 'e', 'l', 'l', 'o']));
