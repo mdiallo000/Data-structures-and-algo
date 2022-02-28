@@ -2,10 +2,15 @@
 
 const BinarySearch = (arr, target) => {
   // * we first began by intializing a left, right and mid pointers
+
   let left = 0;
   let right = arr.length - 1;
-  let mid = Math.floor((left + right) / 2);
-  while (left < right) {
+  let mid;
+
+  // ** We run the loop as long as the left pointer is greaterThAN or === to the right because we know once we pass this point then the target is definetly not in the list.
+
+  while (left <= right) {
+    mid = Math.floor((left + right) / 2);
     if (target === arr[mid]) {
       return mid;
     }
@@ -20,4 +25,4 @@ const BinarySearch = (arr, target) => {
 };
 
 let orderList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(BinarySearch(orderList, 7));
+console.log(BinarySearch(orderList));
