@@ -38,3 +38,5 @@ let wordvar = word.toLowerCase();
 console.log(ValidPalindrome('racecar '));
 
 // ? This is how i solved it basically a palindrome is a word written same front way and backway.
+
+function ValidPalindromeTWO(str) {}
