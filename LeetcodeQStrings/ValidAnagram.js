@@ -8,9 +8,12 @@ var isAnagram = (s, t) => {
   if (s.length !== t.length) {
     return false;
   }
+  // * I generally dont like the way this question was solved since it used in-built functions that may not be available on an interview
+
   if (s.length === t.length) {
     let sArray = s.split('');
     let tArray = t.split('');
+    // *** Above we use the split function to create an array of the string characters
 
     sArray.sort();
     tArray.sort();
@@ -39,6 +42,8 @@ const AnagramTwo = (s, t) => {
   for (let i = 0; i < sArray.lenght; i++) {
     if (sArray[i] !== tArray[i]) {
       return false;
-    } else return true;
+    }
   }
+  return true;
 };
+console.log(AnagramTwo('cancertumor', 'certumorcan'));
