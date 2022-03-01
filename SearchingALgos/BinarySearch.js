@@ -17,12 +17,37 @@ const BinarySearch = (arr, target) => {
     if (target < arr[mid]) {
       right = mid - 1;
     }
+    // * If target is greater than the element currently found at the mid point then we know we need to recalibrate our search area by icreasing the left pointer to be greater than mid
     if (target > arr[mid]) {
       left = mid + 1;
     }
   }
+  // * If the target ins't found they we return -1
   return -1;
 };
 
 let orderList = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(BinarySearch(orderList));
+
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+
+class MyLinkedList {
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
+  }
+
+  Push(value) {
+    let node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    }
+  }
+}
