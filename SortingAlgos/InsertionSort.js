@@ -1,5 +1,8 @@
 const InsertSort = (arr) => {
-  for (let i = 1; i < arr.length - 1; i++) {
+  // ** [25, 5, 13, 17, 45]
+  // **  J   Cv
+
+  for (let i = 1; i <= arr.length - 1; i++) {
     let currentVal = arr[i];
     let j = i - 1;
     while (j >= 0 && arr[j] > currentVal) {
@@ -11,4 +14,5 @@ const InsertSort = (arr) => {
   return arr;
 };
 // let numser = [1,34,56,32,45]
-console.log(InsertSort([34, 23, 45, 67, 32, 45, 67]));
+let numbers = [25, 5, 13, 17, 45];
+console.log(InsertSort(numbers));
