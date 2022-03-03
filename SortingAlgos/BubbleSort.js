@@ -37,7 +37,7 @@ let list = [23, 2, 45, 64, 231, 31];
 //   return arr;
 // }
 
-//*  More optimized way of doing Bubble sort is to include a mechanism that will check wheter or not we have a made a swap, if we have then it remains true, if we didnt make a previous swap then we need to brake out of our loop rather than continously looping for no reason. This variable essentially helps us stop the looop if we already finished sorting.
+//*  More optimized way of doing Bubble sort is to include a mechanism that will check wheter or not we have a made a swap, if we have then it remains true, if we didnt make a previous swap then we need to break out of our loop rather than continously looping for no reason. This variable essentially helps us stop the looop if we already finished sorting.
 
 function OptimalBubbleSort(arr) {
   let DidWeSwap;

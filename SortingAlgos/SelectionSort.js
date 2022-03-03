@@ -1,3 +1,7 @@
+
+// ** Selection sort goes through the entire list or array 
+
+
 function Selectionsort(arr) {
   let N = arr.length;
   for (let i = 0; i < N; i++) {

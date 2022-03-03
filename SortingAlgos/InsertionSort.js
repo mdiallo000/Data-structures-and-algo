@@ -30,4 +30,4 @@ const Insert = (arr) => {
 
   return arr;
 };
-console.log(SelectionSort(numbers));
+console.log(Insert(numbers));
