@@ -31,3 +31,17 @@ function RecursiveFactorial(num) {
     // 2 times 1
   }
 }
+const ContainsDuplicate = (arr) => {
+  for (let i = 0; i <= arr.length-1; i++) {
+    let currentVal = arr[i];
+
+    for (let j = i + 1;j<= arr.length - 1; j++) {
+      if (currentVal === arr[j]) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+};
+console.log(ContainsDuplicate([1,23,4567,2]))

@@ -8,10 +8,10 @@ let listOne = [1, 2, 3, 5, 6];
 let listTwo = [1, 2, 3, 2, 4];
 
 const ContainsDuplicate = (arr) => {
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i <= arr.length-1; i++) {
     let currentVal = arr[i];
 
-    for (let j = i + 1; arr.length - 1; i++) {
+    for (let j = i + 1;j<= arr.length - 1; i++) {
       if (currentVal === arr[j]) {
         return true;
       }
@@ -20,3 +20,4 @@ const ContainsDuplicate = (arr) => {
 
   return false;
 };
+console.log(ContainsDuplicate([1,23,23,4567,2]))
