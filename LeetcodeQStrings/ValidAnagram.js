@@ -27,7 +27,7 @@ var isAnagram = (s, t) => {
   return true;
 };
 
-console.log(isAnagram('anm', 'man'));
+console.log(isAnagram('racecar', 'man'));
 
 const AnagramTwo = (s, t) => {
   if (s.length !== t.length) {
@@ -47,3 +47,8 @@ const AnagramTwo = (s, t) => {
   return true;
 };
 console.log(AnagramTwo('cancertumor', 'certumorcan'));
+
+let splitword = 'hello my is mamadou';
+
+let newrd = splitword.split(' ');
+console.log(newrd);
