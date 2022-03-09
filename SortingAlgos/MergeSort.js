@@ -2,14 +2,14 @@
 // ** Merge Sort uses the Divide and conquer technique. It essentially brakes down a main unsorted array into smaller pieces that are sorted, and then it combines the mini sorted array into the original size.
 
 const MergeSort = (arr) => {
-  if (arr.length <= 1) {
+  if (arr.length - 1 <= 1) {
     return arr;
   }
-  let mid = Math.floor(arr.length / 2);
+  let mid = Math.floor(arr.length - 1 / 2);
   // ** This is the right side of my array
-  let left = MergeSort(arr.splice(0, mid));
+  let left = MergeSort(arr.slice(0, mid));
   // **The right portion of our array
-  let Right = MergeSort(arr.splice(mid));
+  let Right = MergeSort(arr.slice(mid));
 
   return MergeArrays(left, Right);
 };
@@ -42,6 +42,6 @@ const MergeArrays = (arr1, arr2) => {
   return newArr;
 };
 
-let num1 = [38, 42, 57];
-let num2 = [34, 56, 64, 78, 98, 100];
-console.log(MergeArrays(num1, num2));
+let num1 = [38, 0, 742, 57];
+let num2 = [34, 56, 12, 4, 88, 64, 78, 98, 100];
+console.log(MergeSort(num2));
