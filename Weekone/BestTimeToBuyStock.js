@@ -10,21 +10,26 @@
 //? Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 
 // ! I have a list prices. want to get the most profit = BP - LW. So i have to find a min
-let prices = [7, 1, 5, 7, 2, 6, 8];
+let prices = [7, 1, 5, 8, 9, 4, 6, 2];
 // *         min            max
 const maxProfit = (arr) => {
-  let profit = 0;
-  let min = 0;
-  let max = arr.length - 1;
-  while (min <= max) {
-    if (arr[max] - arr[min] > profit) {
-      profit = arr[max] - arr[min];
-    } else {
-      max--;
-    }
+  // ! Code explanation
+  // ** This is two pointer problem where we will compare the element to the rigth with the element to to the left. Since we are atttempting to find profit we need to disregard anytime our left pointer is greater than our rigth.
+  // * If our left is less than our right then we can consider the result since it will result in profit. 2. we will then move the right pointer one stop and perform the same analysis again until we encounter a instance where the left value is greather than the rigth. 3. At that point we will
 
-    min++;
+  let left = 0;
+  let right = 1;
+  let maxProfit = 0;
+  let currentProfit = 0;
+  while (right < arr.length) {
+    if (arr[left] > arr[right]) {
+      left = right;
+    } else {
+      currentProfit = arr[right] - arr[left];
+      maxProfit = Math.max(maxProfit, currentProfit);
+      right++;
+    }
   }
-  return profit;
+  return maxProfit;
 };
 console.log(maxProfit(prices));
