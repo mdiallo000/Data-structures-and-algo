@@ -10,7 +10,7 @@
 //? Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
 
 // ! I have a list prices. want to get the most profit = BP - LW. So i have to find a min
-let prices = [7, 12, 1, 0, 5];
+let prices = [7, 12, 1, 4, 3, 5];
 // *         min            max
 const maxProfit = (arr) => {
   // ! Code explanation
@@ -23,6 +23,7 @@ const maxProfit = (arr) => {
   let currentProfit = 0;
   while (right < arr.length) {
     if (arr[left] > arr[right]) {
+      // ** If we find a price that is less than our old min then we can jump ahead to that new price and start the comparson again
       left = right;
     } else {
       currentProfit = arr[right] - arr[left];
@@ -32,7 +33,7 @@ const maxProfit = (arr) => {
   }
   return maxProfit;
 };
-
+console.log(maxProfit(prices));
 const BruteForce = (arr) => {
   maxP = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -42,8 +43,7 @@ const BruteForce = (arr) => {
   }
 
   return maxP;
+  // * This method will yield a time complexity of O(n^2) since we are not only iterating through the outer loop, but we also iterate through once more in our inner loop as we compare our prices.
 };
 
-prices = [7, 12, 7, 4, 5, 89, 24];
-console.log(BruteForce(prices));
 console.log(maxProfit(prices));

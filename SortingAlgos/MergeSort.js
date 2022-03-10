@@ -45,3 +45,9 @@ const MergeArrays = (arr1, arr2) => {
 let num1 = [38, 0, 742, 57];
 let num2 = [34, 56, 12, 4, 88, 64, 78, 98, 100];
 console.log(MergeSort(num2));
+
+// ! Big O of MergeSort
+
+// ** The best, average and worst Time complexity of Merge Sort is O(NlogN )
+
+// ** The space complexity is always O(n) since we are creating new arrays multiples time when we recursively splice the original array into even more tiny pieces
