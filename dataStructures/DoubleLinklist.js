@@ -225,7 +225,7 @@ class SinglyLinkedList {
   }
   Remove(index) {
     if (index < 0 || index > this.length) {
-      return undefined;
+      return null;
     }
     if (index === this.legnth - 1) {
       return this.Pop();
