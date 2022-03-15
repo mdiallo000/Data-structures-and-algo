@@ -18,9 +18,14 @@ class HashTable {
 
   Set (key, value){
 
-    let hashedkey = this.hash(key)
-    
-
+    let index = this.hash(key)
+     if(!this.KeyMap[index]){
+      this.KeyMap[index] = []
+     }
+     this.KeyMap[index].push([key, value])       
   }
 }
 
+let newHash = new HashTable()
+
+newHash.Set()
