@@ -1,4 +1,4 @@
-var romanToInt = function (s) {
+const romanToInt = function (s) {
   let I = 1;
   let V = 5;
   let X = 10;
