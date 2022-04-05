@@ -141,7 +141,7 @@ class SinglyLinkedList {
     let finalTail = current;
     while (current.next !== null) {
       finalTail = current;
-      // we update final tail so that it willl always lag behind until we reach the target
+      // we update final tail so that it will always lag behind until we reach the target
       current = current.next;
     }
     this.tail = this.tail;

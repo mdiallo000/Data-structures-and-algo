@@ -16,7 +16,7 @@ const UniqueChar = (str) => {
     // * whatever our current element is put inside the Map and make its value 1 as a default, if we have already encountered it before then increment it. So the unique character will end up only with one, will the none unique character will be > 1.
     myMap[curr] = myMap[curr] + 1 || 1;
   }
-  // *here is where we retireve the element with the value of  1.
+  // *where is where we retireve the element with the value of  1.
   for (let j = 0; j < str.length; j++) {
     let curr = str[j];
     if (myMap[curr] === 1) {
