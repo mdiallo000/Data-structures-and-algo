@@ -22,6 +22,18 @@ class BinarySearchTree {
         if (value < curr.value) {
           if (curr.left === null) {
             current.left = newNode;
+            return this;
+          } else {
+            curr = curr.left;
+          }
+        } else {
+          if (value > curr.value) {
+            if (curr.right === null) {
+              curr.right = newNode;
+              return this;
+            } else {
+              curr = curr.right;
+            }
           }
         }
       }
