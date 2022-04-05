@@ -21,7 +21,7 @@ class BinarySearchTree {
       while (true) {
         if (value < curr.value) {
           if (curr.left === null) {
-            current.left = newNode;
+            curr.left = newNode;
             return this;
           } else {
             curr = curr.left;
@@ -42,5 +42,11 @@ class BinarySearchTree {
 }
 
 let tree = new BinarySearchTree();
-tree.Insert('NewNODE');
+tree.Insert(25);
+tree.Insert(45);
+tree.Insert(74);
+tree.Insert(125);
+tree.Insert(5);
+tree.Insert(3);
+
 console.log(tree);
