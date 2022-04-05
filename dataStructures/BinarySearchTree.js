@@ -19,21 +19,22 @@ class BinarySearchTree {
     } else {
       let curr = this.root;
       while (true) {
+        if (value === curr.value) {
+          return undefined;
+        }
         if (value < curr.value) {
           if (curr.left === null) {
             curr.left = newNode;
             return this;
-          } else {
-            curr = curr.left;
           }
+          curr = curr.left;
         } else {
           if (value > curr.value) {
             if (curr.right === null) {
               curr.right = newNode;
               return this;
-            } else {
-              curr = curr.right;
             }
+            curr = curr.right;
           }
         }
       }
