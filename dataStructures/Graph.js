@@ -10,6 +10,7 @@ const Depth_First_Shirt = (graph, Start) => {
     }
   }
 };
+const Breath_First_Shirt = (graph, start) => {};
 
 const network = {
   A: ['B', 'C'],
@@ -19,3 +20,4 @@ const network = {
   F: [],
   E: [],
 };
+console.log(Depth_First_Shirt(network, 'A'));
