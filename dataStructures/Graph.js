@@ -18,6 +18,7 @@ const Breath_First_Shirt = (graph, start) => {
     current = queue.shift();
     console.log(current);
     for (let neighbors of graph[current]) {
+      queue.push(neighbors);
     }
   }
 };
@@ -30,4 +31,4 @@ const network = {
   F: [],
   E: [],
 };
-console.log(Depth_First_Shirt(network, 'A'));
+console.log(Breath_First_Shirt(network, 'A'));
