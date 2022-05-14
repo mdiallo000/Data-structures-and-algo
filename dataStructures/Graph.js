@@ -27,12 +27,15 @@ const Breath_First_Shirt = (graph, start) => {
   while (queue.length > 0) {
     current = queue.shift();
     console.log(current);
-    for (let neighbors of graph[current]) {
-      queue.push(neighbors);
+    for (let neighbor of graph[current]) {
+      queue.push(neighbor);
     }
   }
 };
+// ==================================================
+const recursive_bfs = (graph, start) => {};
 
+//===================================================
 const network = {
   A: ['B', 'C'],
   B: ['D'],
@@ -41,4 +44,4 @@ const network = {
   F: [],
   E: [],
 };
-console.log(Breath_First_Shirt(network, 'A'));
+console.log(Recursion_DFS(network, 'A'));
