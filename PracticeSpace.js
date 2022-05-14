@@ -11,4 +11,15 @@
  *
  *
  */
+ let nums = [[1, 2, 5], [45, 7, 6], [1], [7, 8]]
+const FlattenArr = (nums) =>{
+    let arr = []
+    for(let i =0 ; i<=nums.length; i++){
+        for( let j =0; j<=nums.length, j++) {
+            arr.push(nums[j])
+        }
 
+
+    }
+return arr 
+}

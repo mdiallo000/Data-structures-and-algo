@@ -40,6 +40,24 @@ class BinarySearchTree {
       }
     }
   }
+
+  BFS(root) {
+    let result = [];
+    let queue = [];
+    queue.unshift(root);
+    while (queue) {
+      let tree_node = 0;
+      for (let i = 0; i < queue.length; i++) {
+        tree_node = queue.pop();
+        queue.unshift(tree_node.left);
+        queue.unshift(tree_node.right);
+      }
+      if (tree_node) {
+        result.push(tree_node);
+      }
+    }
+    return resul;
+  }
 }
 
 let tree = new BinarySearchTree();
