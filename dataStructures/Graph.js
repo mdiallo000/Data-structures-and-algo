@@ -10,7 +10,16 @@ const Depth_First_Shirt = (graph, Start) => {
     }
   }
 };
-const Recursion_DFS = (graph, start) => {};
+// ==============================================
+
+const Recursion_DFS = (graph, start) => {
+  console.log(start);
+  for (let neighbors of graph[start]) {
+    Recursion_DFS(graph, neighbors);
+  }
+};
+
+// ===============================================
 const Breath_First_Shirt = (graph, start) => {
   let queue = [start];
   let current;
