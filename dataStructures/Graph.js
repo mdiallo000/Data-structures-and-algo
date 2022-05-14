@@ -10,7 +10,17 @@ const Depth_First_Shirt = (graph, Start) => {
     }
   }
 };
-const Breath_First_Shirt = (graph, start) => {};
+const Breath_First_Shirt = (graph, start) => {
+  let queue = [start];
+  let current;
+
+  while (queue.length > 0) {
+    current = queue.shift();
+    console.log(current);
+    for (let neighbors of graph[current]) {
+    }
+  }
+};
 
 const network = {
   A: ['B', 'C'],
