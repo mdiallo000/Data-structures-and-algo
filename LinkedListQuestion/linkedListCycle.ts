@@ -40,8 +40,11 @@ function detectCycle(head: ListNode | null): ListNode | null {
         
         let res =  head 
 
-        while 
-
+        while (res){
+            res=  res.next
+            crossOver = crossOver.next 
+        } 
+        return res 
 
 
 
