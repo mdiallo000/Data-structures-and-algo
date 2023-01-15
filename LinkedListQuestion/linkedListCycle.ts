@@ -33,4 +33,17 @@ function detectCycle(head: ListNode | null): ListNode | null {
         
         }
 
+        let crossOver =  findIntersection(head) 
+        if(!crossOver){
+            return null 
+        }
+        
+        let res =  head 
+
+        while 
+
+
+
+
+
 };
