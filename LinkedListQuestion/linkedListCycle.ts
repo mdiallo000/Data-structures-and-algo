@@ -15,26 +15,22 @@ function detectCycle(head: ListNode | null): ListNode | null {
 
     // steps for the solution:
         //? we will have a helper function that will return to us where the two pointers met, if there is no cyle we will return Null and use that for an edge case. 2 we will then create a new pointer that will start at the head of the linked list and we will check whether or not the two will meet once more */
+        
+        
+        function findIntersection(head: ListNode | null): ListNode |null{
+                
+            let slow =  head 
+            let fast =  head 
+        
+            while(fast && fast.next){
+                slow =  slow.next 
+                fast = fast.next.next
+                if( fast === slow){
+                    return fast 
+                }
+            }
+            return null
+        
+        }
 
 };
-
-
-function findIntersection(head: ListNode): ListNode{
-        
-    let slow =  head 
-    let fast =  head 
-
-    while(fast && fast.next){
-        slow =  slow.next 
-        fast = fast.next.next
-
-    }
-
-
-
-
-
-
-
-
-}
