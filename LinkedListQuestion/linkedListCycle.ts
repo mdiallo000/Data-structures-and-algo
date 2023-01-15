@@ -24,6 +24,16 @@ function findIntersection(head: ListNode): ListNode{
     let slow =  head 
     let fast =  head 
 
+    while(fast && fast.next){
+        slow =  slow.next 
+        fast = fast.next.next
+
+    }
+
+
+
+
+
 
 
 
