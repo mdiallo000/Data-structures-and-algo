@@ -7,6 +7,7 @@ function findDuplicate(nums: number[]): number {
             if(net.has(nums[curr])){
                 return nums[curr]
             }
+            net.add(nums[curr])
         }
 
 
