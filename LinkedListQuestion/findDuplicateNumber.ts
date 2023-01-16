@@ -4,7 +4,9 @@ function findDuplicate(nums: number[]): number {
         let net=  new Set()
         
         for(let curr = 0; curr < nums.length; curr++){
-            if(net.has(nums[curr]))
+            if(net.has(nums[curr])){
+                return nums[curr]
+            }
         }
 
 
