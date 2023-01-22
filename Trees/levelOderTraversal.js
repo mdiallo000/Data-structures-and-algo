@@ -7,6 +7,15 @@ const levelOrder = function (root) {
   queue.push(root);
 
   while (queue) {
-    for (let _ = 0; _ < length.queue; _++) {}
+    for (let _ = 0; _ < length.queue; _++) {
+      let level = [];
+      let node = queue.shift();
+      if (node) {
+        level.push(node.val);
+        if (node.left) {
+          queue.push(node.left);
+        }
+      }
+    }
   }
 };
