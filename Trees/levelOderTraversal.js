@@ -15,7 +15,13 @@ const levelOrder = function (root) {
         if (node.left) {
           queue.push(node.left);
         }
+        if (node.right) {
+          queue.push(node.right);
+        }
       }
+    }
+    if (level.length >= 1) {
+      result.push(level);
     }
   }
 };
