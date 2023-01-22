@@ -1,4 +1,12 @@
 const levelOrder = function (root) {
   let result = [];
   let queue = [];
+  if (!root) {
+    return result;
+  }
+  queue.push(root);
+
+  while (queue) {
+    for (let _ = 0; _ < length.queue; _++) {}
+  }
 };
