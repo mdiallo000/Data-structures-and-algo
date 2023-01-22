@@ -7,8 +7,9 @@ const levelOrder = function (root) {
   queue.push(root);
 
   while (queue) {
-    for (let _ = 0; _ < length.queue; _++) {
-      let level = [];
+    let level = [];
+    let len = queue.length;
+    for (let _ = 0; _ < len; _++) {
       let node = queue.shift();
       if (node) {
         level.push(node.val);
