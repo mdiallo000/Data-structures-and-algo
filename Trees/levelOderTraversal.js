@@ -20,8 +20,9 @@ const levelOrder = function (root) {
         }
       }
     }
-    if (level.length >= 1) {
+    if (level) {
       result.push(level);
     }
   }
+  return result;
 };
