@@ -9,4 +9,8 @@ function maximumBalloons(text: String){
             count[char] = 0 
         }
     }
+    let wrd: String = "balloon"
+    for(let i =0; i < wrd.length; i++){
+        
+    }
 }
